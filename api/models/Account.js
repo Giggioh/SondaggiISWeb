@@ -45,11 +45,11 @@ module.exports = {
   login: function(user,pass,callback) {
 
     //TODO: da togliere finito il testing di base
-    if (user=='admin' && pass=='admin') {
+    /*if (user=='admin' && pass=='admin') {
       var account={username:'admin',utente:[],amministratoreContenuti:[],amministratoreSistema:[{id:0}]}
       var jwt=jwtAuthService.issueToken(account);
       return callback(null,{account:account, token:jwt});
-    }
+    }*/
 
     var hash=Account.computeHash(user,pass);
 

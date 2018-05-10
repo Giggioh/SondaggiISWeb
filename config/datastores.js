@@ -2,8 +2,9 @@
  * THIS FILE WAS ADDED AUTOMATICALLY by the Sails 1.0 app migration tool.
  */
 
-var urldb = require('uri').parse(process.env.DATABASE_URL);
+var urldb = require('url').parse(process.env.DATABASE_URL);
 console.log(urldb);
+console.log(process.env.DATABASE_URL);
 module.exports.datastores = {
 
   // In previous versions, datastores (then called 'connections') would only be loaded

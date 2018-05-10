@@ -1,0 +1,23 @@
+<div ng-include="'templates/header.html'"/>
+<div class="container mt-3" align="center" ng-controller="RegisterCtrl">
+  <h3>Registrazione</h3>
+
+  <form class="mx-xl-5 w-50">
+    <div class="form-group">
+      <input class="form-control mt-1" type="text" placeholder="Username" name="username" ng-model="formData.account.username"/>
+      <input class="form-control mt-1" type="password" placeholder="Password" name="password" ng-model="formData.account.password"/>
+
+      <div ng-show="accountType==0" class="mt-2">
+        <h4>Dati utente</h4>
+        <input class="form-control mt-1" type="text" placeholder="Nome" name="nome" ng-model="formData.utente.nome"/>
+        <input class="form-control mt-1" type="text" placeholder="Cognome" name="cognome" ng-model="formData.utente.cognome"/>
+        <input class="form-control mt-1" type="date" ng-model="formData.utente.data_nascita"/>
+      </div>
+
+
+      <input ng-click="register()" class="btn btn-primary btn-lg mt-1"  type="submit" content="Invia"/>
+    </div>
+  </form>
+
+</div>
+

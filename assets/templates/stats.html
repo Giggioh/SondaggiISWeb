@@ -1,0 +1,51 @@
+<div ng-include="'templates/header.html'"/>
+<div class="container" align="center" ng-controller="StatsCtrl">
+
+  <h1>Statistiche sondaggio "{{sondaggio.nome}}"</h1>
+
+  <div class="row">
+    <button class="form-control" ng-click="calc()">Calcola statistiche</button>
+  </div>
+
+  <div class="row" ng-repeat="argomento in sondaggio.argomenti">
+    <div class="col">
+      <div class="row align-items-center form-text">
+        {{argomento.nome}}
+      </div>
+      <div class="row">
+        <div class="container">
+          <div class="row" ng-repeat="domanda in argomento.domande">
+            <div class="col-auto form-text">
+              {{domanda.testo}}
+            </div>
+            <div class="col">
+              <div class="container">
+                <div class="row" ng-repeat="risposta in domanda.risposte">
+                  <div class="col form-text">
+                    {{risposta.testo}}
+                  </div>
+                  <div class="col">
+                    <div class="row form-text" ng-repeat="stat in risposta.statistiche">
+                      {{stat.count}} {{stat.tipo}}
+                    </div>
+                  </div>
+                  <!--<a class="btn btn-primary" data-toggle="collapse" href="#{{risposta.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Visualizza stats
+                  </a>
+                  <div class="collapse" id="{{risposta.id}}">
+                    a<br>b<br>c<br>
+                  </div>-->
+                </div>
+              </div>
+              <br>
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+</div>
+

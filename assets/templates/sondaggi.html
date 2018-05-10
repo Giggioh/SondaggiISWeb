@@ -1,0 +1,14 @@
+<div ng-include="'templates/header.html'"/>
+<div class="container" align="center" ng-controller="ListaSondaggiCtrl">
+  <h3>Sondaggi</h3>
+
+  <div class="row" ng-repeat="sondaggio in sondaggi">
+    <div class="col items-align-start text-left"><a href="#!/sondaggio/{{sondaggio.id}}">{{sondaggio.nome}}</a></div>
+    <div class="col" ng-show="showAC"><input ng-show="!sondaggio.bozza" class="form-control" type="submit" value="Statistiche" ng-click="stats(sondaggio)"/></div>
+    <div class="col" ng-show="showAC"><input ng-show="sondaggio.bozza" class="form-control" type="submit" value="Modifica" ng-click="modifica(sondaggio)"/></div>
+    <div class="col" ng-show="showAC"><input ng-show="sondaggio.bozza" class="form-control" type="submit" value="Pubblica" ng-click="pubblica(sondaggio)"/></div>
+    <div class="col" ng-show="showAC"><input ng-show="!sondaggio.bozza && !sondaggio.chiuso" class="form-control" type="submit" value="Chiudi" ng-click="chiudi(sondaggio)"/></div>
+    <br>
+  </div>
+</div>
+

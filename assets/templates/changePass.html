@@ -1,0 +1,14 @@
+<div ng-include="'templates/header.html'"/>
+<div class="container mt-3" align="center" ng-controller="ChangePassCtrl">
+  <h3>Cambia password</h3>
+
+  <form class="mx-xl-5 w-50">
+    <div class="form-group">
+      <input type="password" class="form-control input-lg text-center mt-1" placeholder="Vecchia password" ng-model="formData.pvecchia">
+      <input type="password" class="form-control input-lg text-center mt-1" placeholder="Nuova password" ng-model="formData.pnuova">
+      <input type="password" class="form-control input-lg text-center mt-1" placeholder="Conferma nuova password" ng-model="formData.pconf">
+      <button type="submit" class="btn btn-primary btn-lg mt-1" ng-click="update()">Salva</button>
+    </div>
+  </form>
+</div>
+

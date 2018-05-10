@@ -1,0 +1,58 @@
+<div ng-include="'templates/header.html'"/>
+<div class="container" align="center" ng-controller="ListaSondaggiCtrl">
+  <h1>Crea sondaggio</h1>
+  <div>
+    <input class="form-text" type="textbox" placeholder="Nome sondaggio" ng-model="formData.nome">
+  </div>
+  <br>
+
+  <div class="row space-top1" ng-repeat="arg in formData.argomenti">
+    <div>
+      <b>Argomento</b>
+      <br>
+      <input class="col-md-auto form-text align-self-start" type="textbox" placeholder="Etichetta argomento" ng-model="arg.nome">
+    </div>
+
+    <div class="col">
+      <div class="row" ng-repeat="dom in arg.domande">
+        <div class="col">
+          <b>Domanda</b>
+          <br>
+          <textarea class="form-text" placeholder="Testo domanda" ng-model="dom.testo"></textarea>
+        </div>
+
+        <div class="col">
+          <b>Risposte</b>
+          <br>
+          <div ng-repeat="risp in dom.risposte">
+            <input class="col-sm form-text" type="textbox" placeholder="Risposta" ng-model="risp.testo">
+            <button class="form-control col-sm" ng-click="delRisp(risp,dom)">Rimuovi risposta</button>
+          </div>
+        </div>
+
+        <div class="col-md-auto align-self-start">
+          <button class="form-control" ng-click="delDom(dom,arg)">Rimuovi domanda</button>
+          <br>
+          <button class="form-control" ng-click="addRisp(dom)">Aggiungi risposta</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-auto align-self-start">
+      <button class="form-control" ng-click="delArg(arg)">Rimuovi argomento</button>
+      <br>
+      <button class="form-control" ng-click="addDom(arg)">Aggiungi domanda</button>
+    </div>
+  </div>
+
+  <div>
+    <button class="form-control" ng-click="addArg()">Aggiungi argomento</button>
+  </div>
+  <br>
+  <div>
+    <button class="form-control" ng-click="save(false)">Salva come bozza</button>
+    <button class="form-control" ng-click="save(true)">Salva e pubblica</button>
+    <button class="form-control" ng-click="exit()">Abbandona</button>
+  </div>
+</div>
+

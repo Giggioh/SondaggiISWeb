@@ -1,0 +1,45 @@
+<div class="header" align="center">
+  <img src="/images/logo_small.jpg"/>
+</div>
+<div class="container mx-auto pb-lg-5" ng-controller="HeaderCtrl">
+
+  <div class="row" ng-show="!isLogged">
+    <div class="mr-2">
+      <a class="nav-link" href="#!/login">Accedi</a>
+    </div>
+    <div>
+      <a class="nav-link" href="#!/register/utente">Registrati</a>
+    </div>
+  </div>
+
+
+  <div ng-show="isLogged">
+    <div class="row">
+      <div class="w-auto align-self-center">
+        Loggato come <b>{{nome}}</b>,
+      </div>
+      <div>
+        <a class="nav-link" href="#!/changePass">Cambia password</a>
+      </div>
+      <div>
+        <a class="page-link" href="#!/logout">Logout</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="w-auto align-self-center">
+        <a class="page-link" href="#!/sondaggi">Lista sondaggi</a>
+      </div>
+      <div class="w-auto align-self-center" ng-show="isAC">
+        <a class="page-link" href="#!/edit">Nuovo sondaggio</a>
+      </div>
+      <div class="w-auto align-self-center" ng-show="isAS">
+        <a class="page-link" href="#!/register/ac">Crea account AC</a>
+      </div>
+      <div class="w-auto align-self-center" ng-show="isAS">
+        <a class="page-link" href="#!/register/as">Crea account AS</a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

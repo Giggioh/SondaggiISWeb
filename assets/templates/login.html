@@ -1,0 +1,13 @@
+<div ng-include="'templates/header.html'"/>
+<div class="container mt-3" align="center" ng-controller="LoginCtrl">
+  <h3>Login</h3>
+
+  <form class="mx-xl-5 w-50">
+    <div class="form-group">
+      <input type="text" class="form-control input-lg text-center mt-1" placeholder="Username" ng-model="formData.username">
+      <input type="password" class="form-control input-lg text-center mt-1" placeholder="Password" ng-model="formData.password">
+      <button type="submit" class="btn btn-primary btn-lg mt-1" ng-click="login()">Login</button>
+    </div>
+  </form>
+</div>
+

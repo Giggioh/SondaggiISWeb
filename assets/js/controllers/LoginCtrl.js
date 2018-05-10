@@ -1,4 +1,4 @@
-SondaggiIS.controller('LoginCtrl', function($scope, $location, LoginService) {
+SondaggiIS.controller('LoginCtrl', ['$scope','$location','LoginService',function($scope, $location, LoginService) {
 
   if (LoginService.isLoggedIn()) $location.path('/');
 
@@ -12,4 +12,4 @@ SondaggiIS.controller('LoginCtrl', function($scope, $location, LoginService) {
       alert('Login fallito. ('+err.data+')');
     });
   }
-});
+}]);

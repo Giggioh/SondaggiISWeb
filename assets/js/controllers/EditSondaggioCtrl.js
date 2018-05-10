@@ -1,4 +1,4 @@
-SondaggiIS.controller('EditSondaggioCtrl', function($scope, $location,$routeParams, LoginService, SondaggiService) {
+SondaggiIS.controller('EditSondaggioCtrl', ['$scope','$location','$routeParams','LoginService','SondaggiService',function($scope, $location,$routeParams, LoginService, SondaggiService) {
 
   if (!LoginService.isLoggedIn()) $location.path('/login');
   if (!LoginService.isAC()) $location.path('/error');
@@ -51,4 +51,4 @@ SondaggiIS.controller('EditSondaggioCtrl', function($scope, $location,$routePara
     $location.path('/sondaggi');
   }
 
-});
+}]);

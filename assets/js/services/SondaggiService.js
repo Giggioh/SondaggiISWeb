@@ -1,4 +1,4 @@
-SondaggiIS.service('SondaggiService', function($http, $q) {
+SondaggiIS.service('SondaggiService', ['$http','$q',function($http, $q) {
   return {
     getSondaggiUtente: function(filter) {
       var defer = $q.defer();
@@ -87,4 +87,4 @@ SondaggiIS.service('SondaggiService', function($http, $q) {
       return defer.promise;
     },
   }
-});
+}]);

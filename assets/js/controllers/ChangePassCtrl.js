@@ -1,4 +1,4 @@
-SondaggiIS.controller('ChangePassCtrl', function($scope, $location, LoginService) {
+SondaggiIS.controller('ChangePassCtrl', ['$scope','$location','LoginService',function($scope, $location, LoginService) {
 
   if (!LoginService.isLoggedIn()) $location.path('/login');
 
@@ -15,4 +15,4 @@ SondaggiIS.controller('ChangePassCtrl', function($scope, $location, LoginService
       $location.path('/error');
     });
   }
-});
+}]);

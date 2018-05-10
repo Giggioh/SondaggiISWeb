@@ -1,4 +1,4 @@
-SondaggiIS.service('LoginService', function($http, $q) {
+SondaggiIS.service('LoginService', ['$http','$q',function($http, $q) {
   return {
     login: function(user) {
       var defer = $q.defer();
@@ -79,7 +79,7 @@ SondaggiIS.service('LoginService', function($http, $q) {
       return this.isLoggedIn() && this.getCurrentAccount().amministratoreSistema[0];
     },
   }
-}).factory('LoginInterceptor',function($q,$injector) {
+}]).factory('LoginInterceptor',['$q','$injector',function($q,$injector) {
   return {
     request: function (config) {
       var s = $injector.get('LoginService');
@@ -89,6 +89,6 @@ SondaggiIS.service('LoginService', function($http, $q) {
       return config;
     }
   }
-}).config(function($httpProvider) {
+}]).config(['$httpProvider',function($httpProvider) {
     $httpProvider.interceptors.push('LoginInterceptor');
-  });
+  }]);

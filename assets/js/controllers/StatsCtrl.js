@@ -1,4 +1,4 @@
-SondaggiIS.controller('StatsCtrl', function($scope, $location, $routeParams, LoginService, SondaggiService) {
+SondaggiIS.controller('StatsCtrl', ['$scope','$location','$routeParams','LoginService','SondaggiService',function($scope, $location, $routeParams, LoginService, SondaggiService) {
 
   if (!LoginService.isLoggedIn()) $location.path('/');
   if (!LoginService.isAC()) $location.path('/');
@@ -19,4 +19,4 @@ SondaggiIS.controller('StatsCtrl', function($scope, $location, $routeParams, Log
       alert('Si è verificato un errore. ('+err.data+')');
     });
   }
-});
+}]);

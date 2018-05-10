@@ -39,7 +39,3 @@ SondaggiIS.config(['$routeProvider',
       caseInsensitiveMatch: true
     })
   }]);
-
-SondaggiIS.controller('SondaggiCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
-  $scope.prova='Giggio';
-}]);

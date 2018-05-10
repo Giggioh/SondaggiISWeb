@@ -1,4 +1,4 @@
-SondaggiIS.controller('RegisterCtrl', function($scope, $location,$routeParams, LoginService) {
+SondaggiIS.controller('RegisterCtrl', ['$scope','$location','$routeParams','LoginService',function($scope, $location,$routeParams, LoginService) {
 
   $scope.accountType=0; //utente
   if ($routeParams.accountType=='ac') $scope.accountType=1; //AC
@@ -44,4 +44,4 @@ SondaggiIS.controller('RegisterCtrl', function($scope, $location,$routeParams, L
 
   }
 
-});
+}]);

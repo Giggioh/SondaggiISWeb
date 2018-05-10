@@ -31,7 +31,7 @@ module.exports = {
 
     dataCompilazione:{
       type:'ref', //date non è supportato da sails 1.0
-      columnType:'datetime', //quindi type diventa string e columnType diventa date e si ottiene lo stesso risultato
+      columnType:'timestamp', //quindi type diventa string e columnType diventa date e si ottiene lo stesso risultato
       required:true
     },
   },

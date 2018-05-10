@@ -16,7 +16,7 @@ module.exports = {
 
     dataPubblicazione:{ //data pubblicazione non può essere required, siccome apprena creato il sondaggio è privato e non pubblicato
       type:'ref', //date non è più supportato in sails 1.0
-      columnType:'date', //si usa string con columnType invece
+      columnType:'timestamp', //si usa string con columnType invece
     },
 
     argomenti:{

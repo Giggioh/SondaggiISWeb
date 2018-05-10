@@ -37,7 +37,7 @@ module.exports = {
 
     ultimoAggiornamento:{
       type:'ref',
-      columnType:'datetime', //come altri
+      columnType:'timestamp', //come altri
       required:true
     },
 

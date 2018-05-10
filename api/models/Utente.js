@@ -27,7 +27,7 @@ module.exports = {
 
     data_nascita: {
       type:'ref',
-      columnType:'datetime',
+      columnType:'timestamp',
       required:true
     }
 

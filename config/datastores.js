@@ -2,7 +2,7 @@
  * THIS FILE WAS ADDED AUTOMATICALLY by the Sails 1.0 app migration tool.
  */
 
-var url = require('url').parse(process.env.DATABASE_URL);
+var urldb = require('url').parse(process.env.DATABASE_URL);
 module.exports.datastores = {
 
   // In previous versions, datastores (then called 'connections') would only be loaded
@@ -20,15 +20,15 @@ module.exports.datastores = {
   }*/
 
   default: {
-    /*adapter: 'sails-postgresql',
-    url: 'postgresql://sondaggi_is:sondaggi-2018@localhost:3306/sondaggi_is'*/
-	host: url.host, 
+    adapter: 'sails-postgresql',
+    url: urldb
+	/*host: url.host, 
     user: url.auth.split(':')[0], 
     password: url.auth.split(':')[1], 
     database: url.pathname.substring(1),
     port: url.port, 
     ssl: true,
-    adapter: 'sails-postgresql'
+    adapter: 'sails-postgresql'*/
   }
 
 

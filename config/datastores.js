@@ -23,7 +23,7 @@ module.exports.datastores = {
 
   default: {
     adapter: 'sails-postgresql',
-    url: urldb
+    url: process.env.DATABASE_URL
 	/*host: url.host, 
     user: url.auth.split(':')[0], 
     password: url.auth.split(':')[1], 

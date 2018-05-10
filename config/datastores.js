@@ -19,8 +19,16 @@ module.exports.datastores = {
   }*/
 
   default: {
-    adapter: 'sails-mysql',
-    url: 'mysql://sondaggi_is:Sondaggi2017@localhost:3306/sondaggi_is'
+    /*adapter: 'sails-postgresql',
+    url: 'postgresql://sondaggi_is:sondaggi-2018@localhost:3306/sondaggi_is'*/
+	host: url.host, 
+    user: url.auth.split(':')[0], 
+    password: url.auth.split(':')[1], 
+    database: url.pathname.substring(1),
+    port: url.port, 
+    ssl: true,
+    adapter: 'sails-postgresql'
   }
+
 
 };

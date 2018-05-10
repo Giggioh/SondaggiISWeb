@@ -17,6 +17,7 @@ SondaggiIS.controller('RegisterCtrl', ['$scope','$location','$routeParams','Logi
         $location.path('/login');
       }).catch(function(err) {
         alert('Registrazione fallita. ('+err.data+')');
+		console.log(err);
       });
     }
 

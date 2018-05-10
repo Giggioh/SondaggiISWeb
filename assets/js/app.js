@@ -1,7 +1,7 @@
 'use strict';
 
 var SondaggiIS = angular.module('SondaggiIS', ['ngRoute', 'ui.bootstrap']);
-var server='http://localhost';
+var server='https://sondaggiis.herokuapp.com';
 //Routes
 SondaggiIS.config(['$routeProvider',
   function($routeProvider) {
